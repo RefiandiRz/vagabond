@@ -1,0 +1,206 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #071D2E;
+    --secondary-color: #E74E46;
+    --tertiary-color: #006B5F;
+    --fourth-color: #58FAE4;
+}
+
+body {
+    margin: 0;
+}
+
+.red {
+    color: violet;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo_img {
+    width: 100%;
+    height: auto;
+}
+
+header {
+    width: 100%;
+
+}
+
+.nav {
+    height: 64px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #f0f0f0;
+    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.1),
+        0 2px 4px -2px rgba(0, 0, 0, 0.05);
+}
+
+.left-side {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.container {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+/* Styling untuk garis-garis hamburger */
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--secondary-color);
+    /* Ubah warna garis sesuai kebutuhan */
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+    /* Untuk efek animasi smooth */
+}
+
+/* Animasi transformasi menjadi tanda "X" */
+.nav.active .hamburger span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.nav.active .hamburger span:nth-child(2) {
+    opacity: 0;
+    /* Menghilangkan garis tengah */
+}
+
+.nav.active .hamburger span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+.right-side {
+    position: relative;
+}
+
+.user_icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.menu_mobile {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.08);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+}
+
+.nav.active .menu_mobile {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.menu_mobile ul {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.menu_mobile li {
+    list-style: none;
+    margin: 8px 0;
+}
+
+.menu_mobile a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    padding: 8px 0;
+    width: 100%;
+    text-align: center;
+    transition: color 0.2s ease;
+}
+
+.material-symbols-outlined {
+    color: var(--tertiary-color)
+}
+
+.banner {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: linear-gradient(to bottom,
+            color-mix(in srgb, var(--primary-color) 85%, transparent) 0%,
+            color-mix(in srgb, var(--primary-color) 60%, transparent) 50%,
+            var(--primary-color) 100%), url('./img/banner.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.pretext {
+    background-color: rgba(248, 250, 247, 0.1);
+    font-size: 11px;
+    color: var(--fourth-color);
+    font-family: 'JetBrains Mono', monospace;
+    padding: 8px;
+    text-align: center;
+    border-radius: 25px;
+
+}
+
+.main_title {
+    font-family: 'Syne', sans-serif;
+    font-size: 32px;
+    color: #fff;
+    margin-top: 16px;
+    margin-bottom: 16px;
+
+}
+
+.pretext p {}
